@@ -61,7 +61,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-2">
-					<div id="fh5co-logo"><a href="index.html">Wedding<strong>.</strong></a></div>
+					<div id="fh5co-logo"><a href="index.html"><strong></strong></a></div>
 				</div>
 				<div class="col-xs-10 text-right menu-1">
 					<ul>
@@ -154,7 +154,7 @@
 									<span class="date">Early 2021</span>
 								</div>
 								<div class="timeline-body">
-									<p>Marlene and Kenny met in April 2021 online and hit it off right away. As an indicator that defined their relationship their first date which was supposed to be a walk in Roger Williams Park and coffee turned into over nine hours with a full dinner, which set the pace for a relationship that bucked the normal. They new right away that they had something special.</p>
+									<p>Marlene and Kenny met in April 2021 online and hit it off right away. As an indicator that defined their relationship their first date which was supposed to be a walk in Roger Williams Park and coffee turned into over nine hours with a full dinner, which set the pace for a relationship that bucked the normal. They knew right away that they had something special.</p>
 								</div>
 							</div>
 						</li>
@@ -166,7 +166,7 @@
 									<span class="date">May 29, 2021</span>
 								</div>
 								<div class="timeline-body">
-									<p>Less than 5 months into their relationship they experienced a major catastrophe with Kenny having a life altering car accident. In many relationships this would have been too much for a relationship but not for this pair. They knew that they were a team and supported each other. They have weathered many storms after this including months of therapy, job loss as well as the loss of both of Marlene’s parents. Through it all, they persisted, leaning into each other and growing solid in their partnership. In spite of these challenges there was boundless joy, laughter and contentment.</p>
+									<p>Less than 5 months into their relationship they experienced a major catastrophe with Kenny having a life altering car accident. In many relationships this would have been too much, but not for this pair. They knew that they were a team and supported each other. They have weathered many storms after this including months of therapy, job loss as well as the loss of both of Marlene’s parents. Through it all, they persisted, leaning into each other and growing solid in their partnership. In spite of these challenges there was boundless joy, laughter and contentment.</p>
 								</div>
 							</div>
 						</li>
@@ -297,14 +297,43 @@
 </div>
 
 
+ <style>
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqw3-apoGrlILmPfK7_vNxCrpZUsMGXKw"></script>
+  <script>
+    function initMap() {
+      var location = {lat: 41.6399347464625, lng: -71.0475952539007}; // Coordinates for Rachel's Lakeside
+	
 
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: location,
+        zoom: 15
+      });
 
+      var marker = new google.maps.Marker({
+        position: location,
+        map: map,
+        title: "Rachel's Lakeside"
+      });
+    }
+  </script>
+</head>
+<body>
+	<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+		<h2>Location: Rachel's Lakeside</h2>
+		<h3>950 State Rd, Dartmouth, MA 02747</h3> </div>
+  <div id="map"></div>
 
-
-
-
-
-
+  <script>
+    // Initialize the map when the page has finished loading
+    window.onload = function() {
+      initMap();
+    };
+  </script>
 
 
 
@@ -896,7 +925,26 @@ document.getElementById('foodOptions').addEventListener('change', function() {
 	
   </script>
 
+<script>
+document.addEventListener("keydown", function (event) {
+  // Check if the Enter key was pressed
+  if (event.key === "Enter") {
+    // Get the active element (focused element)
+    const activeElement = document.activeElement;
 
+    // Check if the active element is an input element within the form
+    if (
+      activeElement.tagName === "INPUT" &&
+      activeElement.form &&
+      activeElement.form.tagName === "FORM"
+    ) {
+      // Prevent the form submission
+      event.preventDefault();
+    }
+  }
+});
+
+</script>
 
 	</body>
 </html>
